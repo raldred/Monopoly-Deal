@@ -5,7 +5,7 @@ import Game from '../classes/Game';
 export function handleLobby(socket: SocketIO.Socket, game: Game, refreshGameState: () => void) {
   socket.on(SocketEvent.FROM_CLIENT_JOIN_GAME, ({ roomName, playerName }) => {
     if (game.hasStarted) return;
-    if (roomName !== 'Mediaworks') return;
+    if (roomName !== 'Test') return;
 
     game.createPlayer(socket.id, playerName);
 

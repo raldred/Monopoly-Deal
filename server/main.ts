@@ -381,6 +381,7 @@ const refreshGameState = async () => {
       money: thisPlayer.money,
       actionsLeft: thisPlayer.actionsLeft
     };
+    console.log(clientData);
 
     socket.emit(SocketEvent.FROM_SERVER_REFRESH_CLIENT_DATA, JSON.stringify(clientData));
   }
@@ -406,5 +407,6 @@ const refreshGameState = async () => {
     deckCount: deckCount,
     turn: turn
   };
+  console.log(broadcastData);
   io.of('/').emit(SocketEvent.FROM_SERVER_REFRESH_GAME_STATE, JSON.stringify(broadcastData));
 };

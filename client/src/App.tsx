@@ -136,8 +136,9 @@ const App = () => {
   const [isDisconnectedModalHidden, setIsDisconnectedModalHidden] = useState<boolean>(true);
 
   useEffect(() => {
-    setSocket(socketIOClient('http://ec2-18-130-255-172.eu-west-2.compute.amazonaws.com:5000/'));
-    // setSocket(socketIOClient('http://localhost:5000/'));
+    // setSocket(socketIOClient('http://ec2-18-130-255-172.eu-west-2.compute.amazonaws.com:5000/'));
+    setSocket(socketIOClient(`http://${window.location.hostname}:5000/`));
+  
   }, []);
 
   useEffect(() => {
